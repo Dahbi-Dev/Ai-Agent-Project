@@ -1,0 +1,35 @@
+{
+  "FE-Intern-A": [
+    {
+      "firstName": "Amina",
+      "lastName": "El Idrissi",
+      "email": "amina.elidrissi@example.com",
+      "location": "Casablanca",
+      "experienceYears": 1,
+      "skills": [
+        "React",
+        "JavaScript",
+        "HTML",
+        "CSS"
+      ],
+      "availabilityDate": "2025-10-01",
+      "stage": "SOURCED",
+      "notes": "Portfolio: amina.dev"
+    },
+    {
+      "firstName": "Imane",
+      "lastName": "Benzakour",
+      "email": "imane.benzakour@example.com",
+      "location": "Casablanca",
+      "experienceYears": 2,
+      "skills": [
+        "React",
+        "TypeScript",
+        "Redux"
+      ],
+      "availabilityDate": "2025-10-15",
+      "stage": "SOURCED",
+      "notes": "Built several UI projects"
+    }
+  ]
+}

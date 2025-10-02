@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Frontend Intern",
+    "location": "Casablanca",
+    "skillsRequired": ["React", "JavaScript", "Git"],
+    "jdSnippet": "We build UI with React and Git workflows."
+  },
+  {
+    "title": "Backend Developer",
+    "location": "Rabat",
+    "skillsRequired": ["Python", "Django", "SQL"],
+    "jdSnippet": "Responsible for building and maintaining backend services using Django and SQL databases."
+  },
+  {
+    "title": "Full Stack Engineer",
+    "location": "Casablanca",
+    "skillsRequired": ["Node.js", "React", "MongoDB"],
+    "jdSnippet": "Looking for a full stack engineer to work on scalable web applications using Node.js and React."
+  }
+]

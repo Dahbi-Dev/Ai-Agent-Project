@@ -1,0 +1,134 @@
+[
+  {
+    "firstName": "Amina",
+    "lastName": "El Idrissi",
+    "email": "amina.elidrissi@example.com",
+    "location": "Casablanca",
+    "experienceYears": 1,
+    "skills": ["React", "JavaScript", "HTML", "CSS"],
+    "availabilityDate": "2025-10-01",
+    "stage": "SOURCED",
+    "notes": "Portfolio: amina.dev"
+  },
+  {
+    "firstName": "Youssef",
+    "lastName": "Benali",
+    "email": "youssef.benali@example.com",
+    "location": "Rabat",
+    "experienceYears": 2,
+    "skills": ["Python", "Django", "SQL"],
+    "availabilityDate": "2025-11-10",
+    "stage": "SCREEN",
+    "notes": "Interested in backend roles"
+  },
+  {
+    "firstName": "Salma",
+    "lastName": "Kabbaj",
+    "email": "salma.kabbaj@example.com",
+    "location": "Casablanca",
+    "experienceYears": 0,
+    "skills": ["React", "Git", "HTML"],
+    "availabilityDate": "2025-09-25",
+    "stage": "SOURCED",
+    "notes": "Internship experience"
+  },
+  {
+    "firstName": "Omar",
+    "lastName": "El Mansouri",
+    "email": "omar.elmansouri@example.com",
+    "location": "Marrakech",
+    "experienceYears": 3,
+    "skills": ["Node.js", "Express", "MongoDB"],
+    "availabilityDate": "2025-12-01",
+    "stage": "INTERVIEW",
+    "notes": "Prefers full-stack roles"
+  },
+  {
+    "firstName": "Imane",
+    "lastName": "Benzakour",
+    "email": "imane.benzakour@example.com",
+    "location": "Casablanca",
+    "experienceYears": 2,
+    "skills": ["React", "TypeScript", "Redux"],
+    "availabilityDate": "2025-10-15",
+    "stage": "SOURCED",
+    "notes": "Built several UI projects"
+  },
+  {
+    "firstName": "Karim",
+    "lastName": "Toumi",
+    "email": "karim.toumi@example.com",
+    "location": "Fes",
+    "experienceYears": 4,
+    "skills": ["Java", "Spring Boot", "SQL"],
+    "availabilityDate": "2026-01-10",
+    "stage": "SCREEN",
+    "notes": "Strong backend skills"
+  },
+  {
+    "firstName": "Nadia",
+    "lastName": "Chafai",
+    "email": "nadia.chafai@example.com",
+    "location": "Casablanca",
+    "experienceYears": 1,
+    "skills": ["HTML", "CSS", "JavaScript"],
+    "availabilityDate": "2025-10-05",
+    "stage": "SOURCED",
+    "notes": "Good in responsive design"
+  },
+  {
+    "firstName": "Mehdi",
+    "lastName": "Zerouali",
+    "email": "mehdi.zerouali@example.com",
+    "location": "Tangier",
+    "experienceYears": 2,
+    "skills": ["Python", "Flask", "Docker"],
+    "availabilityDate": "2025-11-01",
+    "stage": "INTERVIEW",
+    "notes": "Works on ML side projects"
+  },
+  {
+    "firstName": "Sara",
+    "lastName": "El Amrani",
+    "email": "sara.elamrani@example.com",
+    "location": "Casablanca",
+    "experienceYears": 0,
+    "skills": ["React", "Git", "TailwindCSS"],
+    "availabilityDate": "2025-09-30",
+    "stage": "SOURCED",
+    "notes": "Fresh graduate"
+  },
+  {
+    "firstName": "Hicham",
+    "lastName": "Mouline",
+    "email": "hicham.mouline@example.com",
+    "location": "Rabat",
+    "experienceYears": 5,
+    "skills": ["C#", ".NET", "SQL"],
+    "availabilityDate": "2025-12-20",
+    "stage": "OFFER",
+    "notes": "Senior backend dev"
+  },
+  {
+    "firstName": "Kawtar",
+    "lastName": "Ouazzani",
+    "email": "kawtar.ouazzani@example.com",
+    "location": "Casablanca",
+    "experienceYears": 1,
+    "skills": ["React", "Next.js", "JavaScript"],
+    "availabilityDate": "2025-10-12",
+    "stage": "SOURCED",
+    "notes": "Worked on freelance projects"
+  },
+  {
+    "firstName": "Anas",
+    "lastName": "Berrada",
+    "email": "anas.berrada@example.com",
+    "location": "Agadir",
+    "experienceYears": 2,
+    "skills": ["PHP", "Laravel", "MySQL"],
+    "availabilityDate": "2025-11-15",
+    "stage": "SCREEN",
+    "notes": "Interested in web backend"
+  }
+]
