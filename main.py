@@ -9,7 +9,7 @@ last_search = []
 current_email = None
 current_recipients = []
 
-# Load JSON file
+#-- Load JSON file
 def load_file(name):
     file = Path(f"data/{name}")
     if not file.exists():
@@ -20,40 +20,40 @@ def load_file(name):
     with open(file) as f:
         return json.load(f)
 
-# Save JSON file
+#-- Save JSON file
 def save_file(name, data):
     Path("data").mkdir(exist_ok=True)
     with open(f"data/{name}", 'w') as f:
         json.dump(data, f, indent=2)
 
-# Parse user query into filters
+#-- Parse user query into filters
 def parse_query(text):
     text = text.lower()
     
-    # Find skills
+    #-- Find skills
     skills = []
     for skill in ["react", "python", "javascript", "django", "node.js", "html", "css", "sql", "git"]:
         if skill in text:
             skills.append(skill.title())
     
-    # Find location
+    #-- Find location
     location = None
     for city in ["casablanca", "rabat", "marrakech", "fes"]:
         if city in text:
             location = city.title()
             break
     
-    # Find experience range
+    #-- Find experience range
     exp_match = re.search(r'(\d+)\s*[-–]\s*(\d+)', text)
     min_exp = int(exp_match.group(1)) if exp_match else 0
     max_exp = int(exp_match.group(2)) if exp_match else 10
-    
-    # Find availability
+
+    #-- Find availability
     days = 30 if "this month" in text else 45
     
     return {"skills": skills, "location": location, "minExp": min_exp, "maxExp": max_exp, "days": days}
 
-# Search and score candidates
+#-- Search and score candidates
 def search_candidates(filters):
     global last_search
     candidates = load_file("candidates.json")
@@ -63,7 +63,7 @@ def search_candidates(filters):
         score = 0
         reasons = []
         
-        # Score skills (+2 each)
+        #-- Score skills (+2 each)
         if filters["skills"]:
             matches = set(person["skills"]) & set(filters["skills"])
             if matches:
@@ -71,17 +71,17 @@ def search_candidates(filters):
                 score += points
                 reasons.append(f"{'+'.join(matches)} (+{points})")
         
-        # Score location (+1)
+        #-- Score location (+1)
         if filters["location"] and person["location"] == filters["location"]:
             score += 1
             reasons.append(f"{person['location']} (+1)")
         
-        # Score experience (+1)
+        #-- Score experience (+1)
         if filters["minExp"] - 1 <= person["experienceYears"] <= filters["maxExp"] + 1:
             score += 1
             reasons.append(f"{person['experienceYears']}y (+1)")
         
-        # Score availability (+1)
+        #-- Score availability (+1)
         avail = datetime.strptime(person["availabilityDate"], "%Y-%m-%d")
         if avail <= datetime.today() + timedelta(days=filters["days"]):
             score += 1
@@ -92,7 +92,7 @@ def search_candidates(filters):
     last_search = sorted(results, key=lambda x: x["score"], reverse=True)[:5]
     return last_search
 
-# Save shortlist
+#-- Save shortlist
 def save_shortlist(name, numbers):
     if not last_search:
         return "Error: No search results"
@@ -103,11 +103,11 @@ def save_shortlist(name, numbers):
     save_file("shortlists.json", all_lists)
     return f"Saved {len(favorites)} candidates to '{name}'"
 
-# Get shortlist
+#-- Get shortlist
 def get_shortlist(name):
     return load_file("shortlists.json").get(name, [])
 
-# Create email
+#-- Create email
 def draft_email(people, job_name):
     jobs = load_file("jobs.json")
     job = next((j for j in jobs if j["title"] == job_name), None)
@@ -131,7 +131,7 @@ def draft_email(people, job_name):
     
     return {"subject": subject, "text": text}
 
-# Create HTML email
+#-- Create HTML email
 def html_template(email):
     return f"""<!DOCTYPE html>
 <html>
@@ -151,7 +151,7 @@ def html_template(email):
 </body>
 </html>"""
 
-# Get analytics
+#-- Get analytics
 def analytics_summary():
     candidates = load_file("candidates.json")
     stages = Counter([c["stage"] for c in candidates])
@@ -171,7 +171,7 @@ def handle_search(cmd):
         print(f"    Available: {p['availabilityDate']} | Stage: {p['stage']}")
         print(f"    Score: {r['reason']}\n")
 
-# Handle save command
+#-- Handle save command
 def handle_save(cmd):
     numbers = [int(n) for n in re.findall(r'#(\d+)', cmd)]
     name_match = re.search(r'as\s+["\']?([^"\']+)["\']?', cmd)
@@ -182,7 +182,7 @@ def handle_save(cmd):
     else:
         print("\nFormat: Save #1 #3 as \"Name\"\n")
 
-# Handle draft command
+#-- Handle draft command
 def handle_draft(cmd):
     global current_email, current_recipients
     
@@ -209,7 +209,7 @@ def handle_draft(cmd):
     print(current_email['text'])
     print("\nBest regards,\nHR Team\n")
     
-    # Show HTML version
+    #-- Show HTML version
     html = html_template(current_email)
     print("\nHTML VERSION:\n")
     print(html)
@@ -217,7 +217,7 @@ def handle_draft(cmd):
     
     print("Type 'Change subject to \"new subject\"' to edit\n")
 
-# Handle edit command
+#-- Handle edit command
 def handle_edit(cmd):
     if not current_email:
         print("\nNo email to edit\n")
@@ -230,7 +230,7 @@ def handle_edit(cmd):
             print(f"\nSubject updated to: {current_email['subject']}\n")
             print(f"Subject: {current_email['subject']}\n{current_email['text']}\n")
 
-# Handle analytics command
+#-- Handle analytics command
 def handle_analytics():
     stats = analytics_summary()
     print("\nANALYTICS\n")
@@ -242,7 +242,7 @@ def handle_analytics():
         print(f"  {skill}: {count}")
     print()
 
-# Main program
+#-- Main program
 def main():
     print("\nHR AGENT - Candidate Search & Outreach Assistant")
     print("\nAvailable Commands:")
